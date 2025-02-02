@@ -12,7 +12,6 @@ switch ($argv[1]) {
         // php -d display_errors -d error_reporting=E_ALL dev.ipkprofit.ru/public_html/core/cron/run.php read_queue
         $QM = new QueueManager($modx);
         if ($messages = $QM->getMessages('CustomServices')) {
-            $modx->log(1, print_r('Reading Queue', 1));
             $oldUser = $modx->user;
             foreach ($messages as $message) {
                 $message = json_decode($message, true);

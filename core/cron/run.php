@@ -9,7 +9,7 @@ $modx->getService('error', 'error.modError');
 $modx->setLogLevel(modX::LOG_LEVEL_ERROR);
 switch ($argv[1]) {
     case 'read_queue':
-        // php -d display_errors -d error_reporting=E_ALL dev.ipkprofit.ru/public_html/core/cron/run.php read_queue
+        // php -d display_errors -d error_reporting=E_ALL core/cron/run.php read_queue
         $QM = new QueueManager($modx);
         if ($messages = $QM->getMessages('CustomServices')) {
             $oldUser = $modx->user;
